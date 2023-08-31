@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Circular Logo Slider</title>
+  <style>
+    :root {
+      --primary-color: #e40000;
+      --second-color: #141414;
+      --white: #ffffff;
+      --dark: #506172;
+      --bgcolor: #ffecec;
+      --primary-font: "Poppins", sans-serif;
+      --second-font: "Signika", sans-serif;
+      background-color: #f0f0f0;
+      color: var(--second-color);
+    }
+
+    .logo-slider {
+      text-align: center;
+      padding: 50px 0;
+    }
+
+    .logo-slider .title {
+      font-size: 28px;
+      margin-bottom: 20px;
+      color: var(--primary-color);
+    }
+
+    .logo-slider-viewport {
+      width: 300px;
+      height: 150px;
+      margin: 0 auto;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .logo-slider-inner {
+      display: flex;
+      position: absolute;
+      animation: slideLoop 15s linear infinite;
+    }
+
+    .logo-slider-items {
+      padding: 20px;
+    }
+
+    .logo-slider-items img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    @keyframes slideLoop {
+      0% {
+        transform: translateX(0);
+      }
+      20% {
+        transform: translateX(0);
+      }
+      25% {
+        transform: translateX(-100%);
+      }
+      45% {
+        transform: translateX(-100%);
+      }
+      50% {
+        transform: translateX(-200%);
+      }
+      70% {
+        transform: translateX(-200%);
+      }
+      75% {
+        transform: translateX(-300%);
+      }
+      95% {
+        transform: translateX(-300%);
+      }
+      100% {
+        transform: translateX(0);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="logo-slider spad">
+    <div class="title">Circular Logo Slider</div>
+    <div class="logo-slider-viewport">
+      <div class="logo-slider-inner" id="logoSlider">
+        <div class="logo-slider-items"><img src="images/logo.png" alt="Logo 1"></div>
+        <div class="logo-slider-items"><img src="images/logo.png" alt="Logo 2"></div>
+        <div class="logo-slider-items"><img src="images/logo.png" alt="Logo 3"></div>
+        <!-- Add more logo items here -->
+        <div class="logo-slider-items"><img src="images/logo.png" alt="Logo 1"></div>
+        <div class="logo-slider-items"><img src="images/logo.png" alt="Logo 2"></div>
+        <div class="logo-slider-items"><img src="images/logo.png" alt="Logo 3"></div>
+        <!-- Add more logo items here -->
+      </div>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: #333;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .slider-container {
+            display: flex;
+            overflow: hidden;
+            width: 300px; /* Adjust to your preferred width */
+        }
+
+        .slide-track {
+            display: flex;
+            animation: scroll 15s linear infinite;
+        }
+
+        .slide {
+            flex-shrink: 0;
+        }
+
+        img {
+            width: 100px;
+            height: 100px;
+        }
+
+        @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-300px); /* Adjust to your preferred slide width */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="slider-container">
+        <div class="slide-track" id="slideTrack">
+            <div class="slide">
+                <img src="https://cdn.freebiesupply.com/logos/large/2x/hogwarts-logo-png-transparent.png" alt="">
+            </div>
+            <div class="slide">
+                <img src="https://cdn.freebiesupply.com/logos/large/2x/hogwarts-logo-png-transparent.png" alt="">
+            </div>
+            <div class="slide">
+                <img src="https://cdn.freebiesupply.com/logos/large/2x/hogwarts-logo-png-transparent.png" alt="">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const slideTrack = document.getElementById('slideTrack');
+
+        slideTrack.addEventListener('animationiteration', () => {
+            slideTrack.style.animation = 'none';
+            setTimeout(() => {
+                slideTrack.style.animation = 'scroll 15s linear infinite';
+            }, 0);
+        });
+    </script>
+</body>
+</html>
